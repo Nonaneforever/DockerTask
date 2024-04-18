@@ -1,0 +1,14 @@
+version: '2'
+
+# Указываем список работающих севисов (talker и listener) с однимм и тем же образом
+services:
+  talker:
+    image: osrf/ros:humble-desktop
+    command: ros2 run demo_nodes_cpp talker
+  listener:
+    image: osrf/ros:humble-desktop
+# Указываем, что нужно делать, и зависимость сервисов
+    command: ros2 run demo_nodes_cpp listener
+    depends_on:
+      - talker
+
