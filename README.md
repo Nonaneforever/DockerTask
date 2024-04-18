@@ -33,13 +33,25 @@ sudo docker run hello-world
 
 Сборка Docker-образа из Dockerfile производится командой:
 
-```docker build -t humble-desktop-prepared```
+```docker build -t humble-desktop-prepared ```
 
 
-Запуск и тестирование Python-приложения в Docker-контейнере:
-Запустите Docker-контейнер из созданного образа.
-Проверьте, что ваша программа работает корректно внутри контейнера.
-Работа с Docker Compose:
+4. Запуск и тестирование приложения в Docker-контейнере:
+
+Запуск Docker-контейнер из созданного образа производится комаендой:
+
+```docker run -it humble-desktop-prepared /bin/bash```
+
+Команда для выполнения программы внутри контейнера:
+
+```docker exec <ID контейнера> /usr/scr/sim_rob.sh```
+
+
+5. Работа с Docker Compose
+
+Созданный docker-compose.yml, который запускает Docker-контейнер с программой, доступен в Git-репозитории.
+
+
 Создайте docker-compose.yml, который запускает ваш Docker-контейнер с программой.
 Добавьте комментарии в docker-compose.yml, объясняющие его структуру и команды.
 Убедитесь, что Docker Compose позволяет запустить ваш контейнер.
